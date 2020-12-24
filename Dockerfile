@@ -1,6 +1,8 @@
 FROM ubuntu:20.04
 ENV PYTHONUNBUFFERED 1
 
+RUN sed -i -e 's/archive.ubuntu.com/mirrors.aliyun.com/' /etc/apt/sources.list
+
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y \
     autoconf \
